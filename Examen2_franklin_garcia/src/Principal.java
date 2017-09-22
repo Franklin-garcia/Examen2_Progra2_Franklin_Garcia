@@ -51,8 +51,21 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_listar_usuarios = new javax.swing.JTable();
         crear_album = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
+        tf_name = new javax.swing.JTextField();
+        tf_artista = new javax.swing.JTextField();
         listar_album = new javax.swing.JDialog();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabla_listar_album = new javax.swing.JTable();
         eliminar_album = new javax.swing.JDialog();
+        jLabel21 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tabla_eliminar_album = new javax.swing.JTable();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -260,37 +273,153 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(45, 45, 45))
         );
 
+        jLabel17.setText("Crear album");
+
+        jLabel18.setText("Nombre");
+
+        jLabel19.setText("Artista");
+
+        jButton11.setText("Crear");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(203, 203, 203)
+                        .addComponent(jLabel17))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_artista, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(35, 35, 35)
+                                .addComponent(tf_name, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(196, 196, 196)
+                        .addComponent(jButton11)))
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel17)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(tf_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tf_artista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addComponent(jButton11)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout crear_albumLayout = new javax.swing.GroupLayout(crear_album.getContentPane());
         crear_album.getContentPane().setLayout(crear_albumLayout);
         crear_albumLayout.setHorizontalGroup(
             crear_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         crear_albumLayout.setVerticalGroup(
             crear_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        listar_album.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                listar_albumWindowActivated(evt);
+            }
+        });
+
+        jLabel20.setText("Listar album");
+
+        tabla_listar_album.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Artista", "Lista canciones"
+            }
+        ));
+        jScrollPane3.setViewportView(tabla_listar_album);
 
         javax.swing.GroupLayout listar_albumLayout = new javax.swing.GroupLayout(listar_album.getContentPane());
         listar_album.getContentPane().setLayout(listar_albumLayout);
         listar_albumLayout.setHorizontalGroup(
             listar_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(listar_albumLayout.createSequentialGroup()
+                .addGap(335, 335, 335)
+                .addComponent(jLabel20)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listar_albumLayout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
         listar_albumLayout.setVerticalGroup(
             listar_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(listar_albumLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                .addGap(58, 58, 58))
         );
+
+        eliminar_album.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                eliminar_albumWindowActivated(evt);
+            }
+        });
+
+        jLabel21.setText("Eliminar album");
+
+        tabla_eliminar_album.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Artista", "Lista canciones"
+            }
+        ));
+        jScrollPane4.setViewportView(tabla_eliminar_album);
 
         javax.swing.GroupLayout eliminar_albumLayout = new javax.swing.GroupLayout(eliminar_album.getContentPane());
         eliminar_album.getContentPane().setLayout(eliminar_albumLayout);
         eliminar_albumLayout.setHorizontalGroup(
             eliminar_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(eliminar_albumLayout.createSequentialGroup()
+                .addGap(335, 335, 335)
+                .addComponent(jLabel21)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eliminar_albumLayout.createSequentialGroup()
+                .addContainerGap(60, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
         eliminar_albumLayout.setVerticalGroup(
             eliminar_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(eliminar_albumLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel21)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                .addGap(58, 58, 58))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -400,12 +529,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel12.setText("Artista");
 
         jLabel13.setText("Duracion");
-
-        cb_album.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cb_albumActionPerformed(evt);
-            }
-        });
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0.0d, null, null, 1.0d));
 
@@ -659,9 +782,54 @@ public class Principal extends javax.swing.JFrame {
         tabla_eliminar_usuarios.getColumnModel().removeColumn(tabla_eliminar_usuarios.getColumnModel().getColumn(0));
     }//GEN-LAST:event_jButton9MouseClicked
 
-    private void cb_albumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_albumActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cb_albumActionPerformed
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        String nombre = tf_name.getText();
+        String artista = tf_artista.getText();
+        lista_album.add(new album(nombre, artista));
+        JOptionPane.showMessageDialog(this, "creado");
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void listar_albumWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_listar_albumWindowActivated
+        if (listar_album.isActive()) {
+            tabla_listar_album.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre", "Artista", "Lista canciones"
+                    }
+            ));
+            jScrollPane3.setViewportView(tabla_listar_album);
+            DefaultTableModel m = new DefaultTableModel();
+            for (album temp : lista_album) {
+                Object row[] = {temp.getNombre(), temp.getArtista(), temp.getLista_canciones()};
+                m = (DefaultTableModel) tabla_listar_album.getModel();
+                m.addRow(row);
+                tabla_listar_album.setModel(m);
+            }
+        }
+
+    }//GEN-LAST:event_listar_albumWindowActivated
+
+    private void eliminar_albumWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_eliminar_albumWindowActivated
+        if (eliminar_album.isActive()) {
+            tabla_eliminar_album.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{},
+                    new String[]{
+                        "Nombre", "Artista", "Lista canciones"
+                    }
+            ));
+            jScrollPane4.setViewportView(tabla_eliminar_album);
+            DefaultTableModel m = new DefaultTableModel();
+            for (album temp : lista_album) {
+                Object row[] = {temp.getNombre(), temp.getArtista(), temp.getLista_canciones()};
+                m = (DefaultTableModel) tabla_eliminar_album.getModel();
+                m.addRow(row);
+                tabla_eliminar_album.setModel(m);
+            }
+
+        }
+
+
+    }//GEN-LAST:event_eliminar_albumWindowActivated
 
     /**
      * @param args the command line arguments
@@ -714,6 +882,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog eliminar_usuarios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -730,7 +899,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -738,12 +912,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
@@ -753,9 +930,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog listar_usuarios;
     private javax.swing.JPasswordField ps_contrasena;
     private javax.swing.JSpinner sp_edad;
+    private javax.swing.JTable tabla_eliminar_album;
     private javax.swing.JTable tabla_eliminar_usuarios;
+    private javax.swing.JTable tabla_listar_album;
     private javax.swing.JTable tabla_listar_usuarios;
+    private javax.swing.JTextField tf_artista;
     private javax.swing.JPasswordField tf_contrasena;
+    private javax.swing.JTextField tf_name;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_username;
     private javax.swing.JTextField tf_usuario;
