@@ -20,7 +20,7 @@ public class usuarios implements Serializable {
     private int edad;
     private String username;
     private String password;
-    private ArrayList<album> lista_album = new ArrayList();
+    private ArrayList<Playlist> lista_playlist = new ArrayList();
     private ArrayList<canciones> lista_favoritos = new ArrayList();
 
     public usuarios() {
@@ -31,8 +31,6 @@ public class usuarios implements Serializable {
         this.edad = edad;
         this.username = username;
         this.password = password;
-        this.lista_album=lista_album;
-        this.lista_favoritos=lista_favoritos;
     }
 
     public String getNombre() {
@@ -67,12 +65,12 @@ public class usuarios implements Serializable {
         this.password = password;
     }
 
-    public ArrayList<album> getLista_album() {
-        return lista_album;
+    public ArrayList<Playlist> getLista_playlist() {
+        return lista_playlist;
     }
 
-    public void setLista_album(ArrayList<album> lista_album) {
-        this.lista_album = lista_album;
+    public void setLista_playlist(ArrayList<Playlist> lista_playlist) {
+        this.lista_playlist = lista_playlist;
     }
 
     public ArrayList<canciones> getLista_favoritos() {
@@ -82,6 +80,8 @@ public class usuarios implements Serializable {
     public void setLista_favoritos(ArrayList<canciones> lista_favoritos) {
         this.lista_favoritos = lista_favoritos;
     }
+
+  
 
     @Override
     public String toString() {

@@ -69,6 +69,25 @@ public class Principal extends javax.swing.JFrame {
         tabla_eliminar_album = new javax.swing.JTable();
         jButton12 = new javax.swing.JButton();
         jd_usuario = new javax.swing.JDialog();
+        tab_usuario = new javax.swing.JTabbedPane();
+        jPanel6 = new javax.swing.JPanel();
+        cb_albumes = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        cb_playlist = new javax.swing.JComboBox<>();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tabla2 = new javax.swing.JTable();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        tf_nombre_playlist = new javax.swing.JTextField();
+        jButton13 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
         tab_principal = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -443,15 +462,195 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(24, 24, 24))
         );
 
+        tab_usuario.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                tab_usuarioStateChanged(evt);
+            }
+        });
+
+        jLabel25.setText("Album");
+
+        jLabel26.setText("Canciones");
+
+        jLabel27.setText("Playlist");
+
+        tabla2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Artista", "Duracion", "Genero"
+            }
+        ));
+        jScrollPane6.setViewportView(tabla2);
+
+        jButton14.setText("Ver canciones");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+
+        jButton15.setText("Agregar");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(cb_albumes, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton14))
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addGap(324, 324, 324))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(cb_playlist, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(139, 139, 139))))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel26))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton15)))
+                .addGap(0, 64, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cb_playlist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cb_albumes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton14)))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel26)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jButton15)))
+                .addContainerGap(179, Short.MAX_VALUE))
+        );
+
+        tab_usuario.addTab("Explorar", jPanel6);
+
+        jLabel23.setText("Crear Playlist");
+
+        jLabel24.setText("Nombre");
+
+        jButton13.setText("Crear playlist");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel24)
+                        .addGap(38, 38, 38)
+                        .addComponent(tf_nombre_playlist, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(298, 298, 298)
+                        .addComponent(jButton13))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(309, 309, 309)
+                        .addComponent(jLabel23)))
+                .addContainerGap(180, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel23)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(tf_nombre_playlist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(85, 85, 85)
+                .addComponent(jButton13)
+                .addContainerGap(312, Short.MAX_VALUE))
+        );
+
+        tab_usuario.addTab("Crear Playlist", jPanel7);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 771, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 521, Short.MAX_VALUE)
+        );
+
+        tab_usuario.addTab("Ver Playlist", jPanel8);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 771, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 521, Short.MAX_VALUE)
+        );
+
+        tab_usuario.addTab("Ver favoritos", jPanel9);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 771, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 521, Short.MAX_VALUE)
+        );
+
+        tab_usuario.addTab("Salir", jPanel10);
+
         javax.swing.GroupLayout jd_usuarioLayout = new javax.swing.GroupLayout(jd_usuario.getContentPane());
         jd_usuario.getContentPane().setLayout(jd_usuarioLayout);
         jd_usuarioLayout.setHorizontalGroup(
             jd_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(tab_usuario)
         );
         jd_usuarioLayout.setVerticalGroup(
             jd_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(tab_usuario)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -939,6 +1138,7 @@ public class Principal extends javax.swing.JFrame {
         String contra = tf_contra.getText();
         String usuario1 = lista_usuarios.get(cb_login.getSelectedIndex()).getUsername();
         String contrasena1 = lista_usuarios.get(cb_login.getSelectedIndex()).getPassword();
+        indice = cb_login.getSelectedIndex();
         if (usua.equals(usuario1) && contra.equals(contrasena1)) {
             JOptionPane.showMessageDialog(this, "hecho");
             jd_usuario.setModal(true);
@@ -949,6 +1149,61 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrecta");
         }
     }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        String nombre = tf_nombre_playlist.getText();
+        lista_usuarios.get(indice).getLista_playlist().add(new Playlist(nombre));
+        JOptionPane.showMessageDialog(this, "Creado");
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void tab_usuarioStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tab_usuarioStateChanged
+        if (tab_usuario.getSelectedIndex() == 0) {
+            DefaultComboBoxModel modelo1 = new DefaultComboBoxModel();
+            for (album a : lista_album) {
+                modelo1.addElement(a);
+            }
+            cb_albumes.setModel(modelo1);
+            ////
+            try {
+                DefaultComboBoxModel modelo2 = new DefaultComboBoxModel();
+                for (Playlist t : lista_usuarios.get(indice).getLista_playlist()) {
+                    modelo2.addElement(t);
+                }
+                cb_playlist.setModel(modelo2);
+            } catch (Exception e) {
+            }
+        }
+    }//GEN-LAST:event_tab_usuarioStateChanged
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        tabla2.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Nombre", "Artista", "Duracion", "Genero"
+                }
+        ));
+        jScrollPane6.setViewportView(tabla2);
+
+        int s = cb_albumes.getSelectedIndex();
+        for (canciones c : lista_album.get(s).getLista_canciones()) {
+            Object[] arreglo = {c.getNombre(), c.getArtista(), c.getDuracion(), c.getGenero()};
+            DefaultTableModel modelo
+                    = (DefaultTableModel) tabla2.getModel();
+            modelo.addRow(arreglo);
+            tabla2.setModel(modelo);
+        }
+
+
+    }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        String nombre=lista_album.get(cb_albumes.getSelectedIndex()).getLista_canciones().get(tabla2.getSelectedRow()).getNombre();
+        String artista=lista_album.get(cb_albumes.getSelectedIndex()).getLista_canciones().get(tabla2.getSelectedRow()).getArtista(); 
+        double duracion=lista_album.get(cb_albumes.getSelectedIndex()).getLista_canciones().get(tabla2.getSelectedRow()).getDuracion();
+        String genero=lista_album.get(cb_albumes.getSelectedIndex()).getLista_canciones().get(tabla2.getSelectedRow()).getGenero();
+        lista_usuarios.get(indice).getLista_playlist().get(cb_playlist.getSelectedIndex()).getLista_canciones().add(new canciones(nombre,artista,duracion,genero));
+        JOptionPane.showMessageDialog(this, "hecho");
+    }//GEN-LAST:event_jButton15MouseClicked
 
     /**
      * @param args the command line arguments
@@ -995,7 +1250,9 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_album;
+    private javax.swing.JComboBox<String> cb_albumes;
     private javax.swing.JComboBox<String> cb_login;
+    private javax.swing.JComboBox<String> cb_playlist;
     private javax.swing.JDialog crear_album;
     private javax.swing.JDialog crear_usuarios;
     private javax.swing.JDialog eliminar_album;
@@ -1004,6 +1261,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1027,6 +1287,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1038,20 +1303,28 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JDialog jd_usuario;
     private javax.swing.JDialog listar_album;
     private javax.swing.JDialog listar_usuarios;
     private javax.swing.JPasswordField ps_contrasena;
     private javax.swing.JSpinner sp_edad;
     private javax.swing.JTabbedPane tab_principal;
+    private javax.swing.JTabbedPane tab_usuario;
+    private javax.swing.JTable tabla2;
     private javax.swing.JTable tabla_eliminar_album;
     private javax.swing.JTable tabla_eliminar_usuarios;
     private javax.swing.JTable tabla_listar_album;
@@ -1063,10 +1336,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_name;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_nombre_cancion;
+    private javax.swing.JTextField tf_nombre_playlist;
     private javax.swing.JTextField tf_user;
     private javax.swing.JTextField tf_username;
     // End of variables declaration//GEN-END:variables
 ArrayList<usuarios> lista_usuarios = new ArrayList();
     ArrayList<canciones> lista_canciones = new ArrayList();
     ArrayList<album> lista_album = new ArrayList();
+    int indice;
 }
