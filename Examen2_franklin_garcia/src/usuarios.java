@@ -26,7 +26,7 @@ public class usuarios implements Serializable {
     public usuarios() {
     }
 
-    public usuarios(ArrayList<canciones> lista_favoritos,ArrayList<album> lista_album,String nombre, int edad, String username, String password) {
+    public usuarios(String nombre, int edad, String username, String password) {
         this.nombre = nombre;
         this.edad = edad;
         this.username = username;
