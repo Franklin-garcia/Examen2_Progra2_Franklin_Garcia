@@ -83,4 +83,9 @@ public class usuarios implements Serializable {
         this.lista_favoritos = lista_favoritos;
     }
 
+    @Override
+    public String toString() {
+        return nombre;
+    }
+
 }

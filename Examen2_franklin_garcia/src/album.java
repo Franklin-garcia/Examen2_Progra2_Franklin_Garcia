@@ -46,5 +46,10 @@ public class album {
     public void setLista_canciones(ArrayList<canciones> lista_canciones) {
         this.lista_canciones = lista_canciones;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
     
 }
