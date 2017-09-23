@@ -43,14 +43,14 @@ public class Hilo2 extends Thread {
     @Override
     public void run() {
         Principal p = new Principal();
-        tiempo.setText(canciones.getDuracion() + "");
         while (canciones.getDuracion() > 0) {
             canciones.setDuracion(canciones.getDuracion() - 1);
+            tiempo.setText(canciones.getDuracion() + "");
             try {
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             } catch (Exception e) {
             }
-            tiempo.setText(canciones.getDuracion() + "");
+            
         }
         JOptionPane.showMessageDialog(null, "hecho");
         p.jd_hilo.dispose();
