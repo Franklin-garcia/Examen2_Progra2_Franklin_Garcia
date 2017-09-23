@@ -11,11 +11,10 @@ import javax.swing.JOptionPane;
  *
  * @author Franklin Garcia
  */
-public class Hilo2 extends Thread{
+public class Hilo2 extends Thread {
 
     private JLabel tiempo;
     private canciones canciones;
-
 
     public Hilo2() {
     }
@@ -43,19 +42,18 @@ public class Hilo2 extends Thread{
 
     @Override
     public void run() {
-        Principal p=new Principal();
-        tiempo.setText(canciones.getDuracion()+"");
-        while(canciones.getDuracion()>0){
-            canciones.setDuracion(canciones.getDuracion()-1);
+        Principal p = new Principal();
+        tiempo.setText(canciones.getDuracion() + "");
+        while (canciones.getDuracion() > 0) {
+            canciones.setDuracion(canciones.getDuracion() - 1);
             try {
-                Thread.sleep(1000); 
+                Thread.sleep(2000);
             } catch (Exception e) {
             }
-            tiempo.setText(canciones.getDuracion()+"");
+            tiempo.setText(canciones.getDuracion() + "");
         }
-        JOptionPane.showMessageDialog(null, "Fin");
+        JOptionPane.showMessageDialog(null, "hecho");
         p.jd_hilo.dispose();
     }
 
-    
 }

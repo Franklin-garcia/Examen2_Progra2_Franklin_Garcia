@@ -1555,5 +1555,5 @@ ArrayList<usuarios> lista_usuarios = new ArrayList();
     Hilo h;
     Hilo2 h2;
     double duracion = 0;
-    canciones cancion=null;
+    canciones cancion;
 }
