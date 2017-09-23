@@ -22,6 +22,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        h = new Hilo(barra, duracion);
+        h2 = new Hilo2(tiempo, cancion);
     }
 
     /**
@@ -94,9 +96,16 @@ public class Principal extends javax.swing.JFrame {
         arbol = new javax.swing.JTree();
         jButton17 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        cb_favoritos = new javax.swing.JComboBox<>();
+        jButton19 = new javax.swing.JButton();
+        barra = new javax.swing.JProgressBar();
         jPanel10 = new javax.swing.JPanel();
         jButton16 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jd_hilo = new javax.swing.JDialog();
+        jLabel30 = new javax.swing.JLabel();
+        tiempo = new javax.swing.JLabel();
         tab_principal = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -667,15 +676,48 @@ public class Principal extends javax.swing.JFrame {
 
         tab_usuario.addTab("Ver Playlist", jPanel8);
 
+        jLabel29.setText("Nombre de cancion");
+
+        jButton19.setBackground(new java.awt.Color(255, 255, 255));
+        jButton19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton19.setForeground(new java.awt.Color(0, 0, 102));
+        jButton19.setText("|>");
+        jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton19MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 773, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel29)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cb_favoritos, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(316, 316, 316)
+                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 521, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(cb_favoritos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(167, 167, 167)
+                .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton19)
+                .addContainerGap(194, Short.MAX_VALUE))
         );
 
         tab_usuario.addTab("Ver favoritos", jPanel9);
@@ -710,7 +752,7 @@ public class Principal extends javax.swing.JFrame {
         jd_usuario.getContentPane().setLayout(jd_usuarioLayout);
         jd_usuarioLayout.setHorizontalGroup(
             jd_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tab_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
+            .addComponent(tab_usuario)
         );
         jd_usuarioLayout.setVerticalGroup(
             jd_usuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -718,6 +760,35 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel30.setText("Cancion");
+
+        tiempo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        tiempo.setText("00:00");
+
+        javax.swing.GroupLayout jd_hiloLayout = new javax.swing.GroupLayout(jd_hilo.getContentPane());
+        jd_hilo.getContentPane().setLayout(jd_hiloLayout);
+        jd_hiloLayout.setHorizontalGroup(
+            jd_hiloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_hiloLayout.createSequentialGroup()
+                .addGroup(jd_hiloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_hiloLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_hiloLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(jLabel30)))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+        jd_hiloLayout.setVerticalGroup(
+            jd_hiloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_hiloLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel30)
+                .addGap(35, 35, 35)
+                .addComponent(tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1239,9 +1310,15 @@ public class Principal extends javax.swing.JFrame {
             } catch (Exception e) {
             }
         }
-     
+        if (tab_usuario.getSelectedIndex() == 3) {
+            DefaultComboBoxModel modelo4 = new DefaultComboBoxModel();
+            for (canciones t : lista_usuarios.get(indice).getLista_favoritos()) {
+                modelo4.addElement(t);
+            }
+            cb_favoritos.setModel(modelo4);
+        }
 
-        
+
     }//GEN-LAST:event_tab_usuarioStateChanged
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
@@ -1311,9 +1388,16 @@ public class Principal extends javax.swing.JFrame {
         String artista = lista_album.get(cb_albumes.getSelectedIndex()).getLista_canciones().get(tabla2.getSelectedRow()).getArtista();
         double duracion = lista_album.get(cb_albumes.getSelectedIndex()).getLista_canciones().get(tabla2.getSelectedRow()).getDuracion();
         String genero = lista_album.get(cb_albumes.getSelectedIndex()).getLista_canciones().get(tabla2.getSelectedRow()).getGenero();
-        lista_usuarios.get(indice).getLista_favoritos().add(new canciones(nombre,artista,duracion,genero));
-        JOptionPane.showMessageDialog(this, "hecho"); 
+        lista_usuarios.get(indice).getLista_favoritos().add(new canciones(nombre, artista, duracion, genero));
+        JOptionPane.showMessageDialog(this, "hecho");
     }//GEN-LAST:event_jButton18MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+        duracion = lista_usuarios.get(indice).getLista_favoritos().get(cb_favoritos.getSelectedIndex()).getDuracion();
+        cancion = lista_usuarios.get(indice).getLista_favoritos().get(cb_favoritos.getSelectedIndex());
+        h.start();
+        h2.start();
+    }//GEN-LAST:event_jButton19MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1360,8 +1444,10 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTree arbol;
+    private javax.swing.JProgressBar barra;
     private javax.swing.JComboBox<String> cb_album;
     private javax.swing.JComboBox<String> cb_albumes;
+    private javax.swing.JComboBox<String> cb_favoritos;
     private javax.swing.JComboBox<String> cb_login;
     private javax.swing.JComboBox<String> cb_playlist;
     private javax.swing.JDialog crear_album;
@@ -1378,6 +1464,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1408,7 +1495,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1434,6 +1523,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    public javax.swing.JDialog jd_hilo;
     private javax.swing.JDialog jd_usuario;
     private javax.swing.JDialog listar_album;
     private javax.swing.JDialog listar_usuarios;
@@ -1456,9 +1546,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_nombre_playlist;
     private javax.swing.JTextField tf_user;
     private javax.swing.JTextField tf_username;
+    public javax.swing.JLabel tiempo;
     // End of variables declaration//GEN-END:variables
 ArrayList<usuarios> lista_usuarios = new ArrayList();
     ArrayList<canciones> lista_canciones = new ArrayList();
     ArrayList<album> lista_album = new ArrayList();
     int indice;
+    Hilo h;
+    Hilo2 h2;
+    double duracion = 0;
+    canciones cancion=null;
 }
